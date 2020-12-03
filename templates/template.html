@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Отчёт</title>
+</head>
+<body>
+    <h1>Отчёт от {{ report_date }} | {{ report_time }}</h1>
+    {% for file, reports in file_reports.items() %}
+        <h2>Файл {{ file }}</h2>
+        <ul>
+            {% for message in reports %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    <h3>Проверено {{ json_count }} JSON файлов.</h3>
+</body>
+</html>
